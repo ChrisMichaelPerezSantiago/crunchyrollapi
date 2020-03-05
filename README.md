@@ -25,7 +25,7 @@
 
 
 ## 📖 API Documentation
-You can access all the API documentation from the following url [docs]()
+You can access all the API documentation from the following url [docs](https://crunchyroll-docs.chrismichael.now.sh/)
 
 
 ## :rocket: Custom Crunchyroll API Link
