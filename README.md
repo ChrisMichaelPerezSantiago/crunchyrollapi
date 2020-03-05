@@ -29,7 +29,7 @@ You can access all the API documentation from the following url [docs](https://c
 
 
 ## :rocket: Custom Crunchyroll API Link
-Link to access the [Crunchyroll API]()
+Link to access the [Crunchyroll API](https://crunchyrollapi.herokuapp.com/v1/)
 
 
 ## 📚 **Development Diary**
