@@ -10,6 +10,35 @@ const { bytesToAss } = require('./subtitles/ass');
 const { BASE_URL } = require('./url/index.js');
 
 
+
+const searchAnime = async(query) => {
+  const res = await cloudscraper.get(`${BASE_URL}es/search?from=search&q=${query}`);
+  const body = await res;
+  const $ = cheerio.load(body)
+  
+  const series = $('div#main_results ul.search-results li').map((index, element) => new Promise(async(resolve) =>{
+    const $element = $(element);
+    const tempId = $element.find('a.clearfix').attr('href');
+    const id = tempId.replace(tempId[0] , '').trim();
+    const title = $element.find('span.info span.name').text().trim().split('\n')[0].trim();
+    const image = $element.find('span.mug img').attr('src');
+    const description = $element.find('span.info span.desc').text();
+    const type = $element.find('span.info span.type').text().trim().replace(/[()]/g, '').trim();
+    const extra = await episodesListHanlder(id); 
+    
+    resolve({
+      id: id || null,
+      title: title || null,
+      image: image || null,
+      description: description || null,
+      type: type || null,
+      episodes: extra || null,
+    });
+  })).get();
+            
+  return Promise.all(series);
+};
+
 const getAnimeListBySeason = async(season , page) => {
   const res = await cloudscraper.get(`${BASE_URL}es/videos/anime/seasons/${season}/ajax_page?pg=${page}`);
   const body = await res;
@@ -300,5 +329,6 @@ module.exports = {
   getAllLiveActionDrama,
   getAnimeListByGenres,
   getAnimeListBySeason,
+  searchAnime,
   getEpisodeVideoData,
 };
