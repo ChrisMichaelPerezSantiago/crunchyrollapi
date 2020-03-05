@@ -8,5 +8,6 @@ const PluginManager = require('./src/api/index');
   const drama = await PluginManager.getAllLiveActionDrama();
   const genres = await PluginManager.getAnimeListByGenres('action', 0);
   const seasons = await PluginManager.getAnimeListBySeason('winter-2020' , 0);
-  //console.log(seasons);
+  const search = await PluginManager.searchAnime('one punch man');
+  //console.log(JSON.stringify(search , null , 2));
 })();
