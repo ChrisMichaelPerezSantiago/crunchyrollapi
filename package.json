@@ -58,9 +58,7 @@
     "playlist-parser": "0.0.12",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.3",
-    "xml2js": "^0.4.23"
-  },
-  "devDependencies": {
+    "xml2js": "^0.4.23",
     "@babel/core": "^7.6.2",
     "@babel/node": "^7.6.2",
     "@babel/plugin-proposal-decorators": "^7.6.0",
