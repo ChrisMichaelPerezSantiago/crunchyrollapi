@@ -42,6 +42,11 @@ class PluginManager{
       const res = await Promise.all(this.plugins.map(plugin => plugin.getAnimeListBySeason(season, page)));
       return res;
     }
+
+    async searchAnime(query){
+      const res = await Promise.all(this.plugins.map(plugin => plugin.searchAnime(query)));
+      return res;
+    };
   };
   
 module.exports = PluginManager;
