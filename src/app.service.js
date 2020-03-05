@@ -58,5 +58,10 @@ export class AppService {
   async getAnimeListBySeason(season , page){
     const res = await PluginManager.getAnimeListBySeason(season , page);
     return res;
+  };
+
+  async searchAnime(search){
+    const res = await PluginManager.searchAnime(search);
+    return res;
   }
 }
