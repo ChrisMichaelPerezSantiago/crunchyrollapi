@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+  <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+  <title>Crunchyroll API | Testing Video</title>
+</head>
+
+<style>
+  html, body, pre, code, kbd, samp {
+    font-family: 'Press Start 2P'
+  }
+  body{
+    background-color: black;
+  }
+  h1{
+    font-size: 50px;
+    color: gold;
+  }
+  .container {
+    text-align: center;
+  }
+  .main {
+    display: inline-block;
+    margin: 0;
+    padding: 0px 20px 0 20px;
+    border: 0;
+    margin-top: 2%;
+  }
+  #player-wrapper {
+    min-width: 320px;
+    min-height: 180px;
+  }
+  .player {
+    display: inline-block;
+    margin: 0 auto;
+    height: auto;
+    width: auto;
+    margin-top: 10%;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+</style>
+
+<body>
+  <section class="container">
+    <div class="main">
+      <h1>Crunchyroll API | Testing Video</h1>
+      <div id="output">
+        <div id="player-wrapper" class="player"></div>
+      </div>
+    </div>
+  </section>
+  <div id="player"></div>
+
+  <script>
+    const file = "https://v.vrv.co/evs/3686b342d9fbfd664fccc43171ee334b/assets/9c301013f039f26a29d6cfa54dcadc2e_2993213.mp4/index-v1-a1.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly92LnZydi5jby9ldnMvMzY4NmIzNDJkOWZiZmQ2NjRmY2NjNDMxNzFlZTMzNGIvYXNzZXRzLzljMzAxMDEzZjAzOWYyNmEyOWQ2Y2ZhNTRkY2FkYzJlXyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE1ODM0MjY3NDF9fX1dfQ__&Signature=Bb3I6s7P5dnRAqs3VyCA~aaxFBepLE25qXPHOe5s7pjaz4fyIWpPvsTX5sK~UaQLbHnrgDyGmRdewl-o8DPjaWgJhQMAdYv1BJ2CqRxwiPCYl8C~H85kKnPLCECGqXJu5Y~BTm7y3e1C9Yckuw9CsiACJX1x66v3duyX9LEhS~3XxKBrzd5C-r55SwKtyauOnKJUkaCA4mjLC9Uoo3DiObI3y2YI0Bo4ai0KoSGPykpo-Z5v0qF6IxnkLvIS03tCLlwO-NQg9V-LcA97xXuHpNOrwpW003mHO2Q~QTsX1LIyM0yaG~ZkTR6CgyLGM-4TpzNA8FJK-nxx5BdmRUtxYQ__&Key-Pair-Id=APKAJMWSQ5S7ZB3MF5VA"
+    const player = new Clappr.Player({
+      source: file,
+      parentId: "#player-wrapper",
+    });
+  </script>
+
+</body>
+</html>
