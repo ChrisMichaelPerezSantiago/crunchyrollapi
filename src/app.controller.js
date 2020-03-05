@@ -508,4 +508,66 @@ export class AppController {
     });
   };
 
+
+  /**
+   *  @api {get} /SearchAnime/:query Searcha anime
+   *  @apiVersion 1.0.0
+   *  @apiName GetSearchAnime
+   *  @apiGroup SearchAnime
+   * 
+   *  @apiSuccess {String} id                      Anime id
+   *  @apiSuccess {String} title                   Anime title
+   *  @apiSuccess {String} image                   Anime image
+   *  @apiSuccess {String} description             Brief description
+   *  @apiSuccess {Object[]} episodes              List of episodes
+   *  @apiSuccess {String} episodes.epsId          Anime episode id
+   *  @apiSuccess {String} episodes.title          Anime episode title
+   *  @apiSuccess {String} episodes.description    Anime episode description
+   *  @apiSuccess {String} episodes.previewImage   Anime episode preview image
+   * 
+   * 
+   *  @apiParam {String} query
+   *  
+   * 
+   *  @apiParamExample {json} 
+   *  {
+   *    query = "one punch man"
+   *  }
+   * 
+   *  @apiSuccessExample {json} Success-Response:
+   *  HTTP/1.1 200 OK
+   * 
+   *    {
+   *     "data": [
+   *       {
+   *         "id": "es/one-punch-man",
+   *         "title": "One-Punch Man",
+   *         "image": "https://img1.ak.crunchyroll.com/i/spire3/bc2dbd3afc97b5f1a1ad49e1d5618a431554828663_thumb.jpg",
+   *         "description": "Saitama comenzó a hacer de héroe por pura afición, y tras tres años de un durísimo entrenamiento consiguió tal nivel de fuerza que puede acabar con...",
+   *         "type": "Series",
+   *         "episodes": [
+   *           {
+   *             "epsId": "es/one-punch-man/episode-12-the-strongest-hero-786398",
+   *             "title": "Episodio 12",
+   *             "description": "El mayor héroe",
+   *             "previewImage": "https://img1.ak.crunchyroll.com/i/spire2-tmb/682ceb64923048680e5d827539995a821558482389_wide.jpg"
+   *           },
+   *           //.....
+   *         ]
+   *       },
+   *       //.....
+   *    }
+   * 
+   * 
+   */
+
+  @Get('/SearchAnime/:query')
+  @Bind(Res() , Param('query'))
+  async searchAnime(res , query){
+    const data = await this.service.searchAnime(query)
+    return res.status(200).json({
+      data: data[0]
+    });
+  };
+
 }
