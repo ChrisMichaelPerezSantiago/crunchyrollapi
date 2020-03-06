@@ -146,6 +146,29 @@ export class AppController {
    *  @apiSuccess {String} episodes.title          Anime episode title
    *  @apiSuccess {String} episodes.description    Anime episode description
    *  @apiSuccess {String} episodes.previewImage   Anime episode preview image
+   *  @apiSuccess {String[]} promo                List of promo
+   *  @apiSuccess {String} promo.title            Promo title
+   *  @apiSuccess {String} promo.previewImage     Preview image  
+   *  @apiSuccess {String} promo.videoURL         Promotional video from youtube.
+   *  @apiSuccess {Object[]} extra               Extra Information
+   *  @apiSuccess {String} extra.titleJapanese   Alternative title in Japanese
+   *  @apiSuccess {String} extra.source          anime source
+   *  @apiSuccess {Number} extra.totalEpisodes   Total anime episodes
+   *  @apiSuccess {String} extra.status          Current Transmission Status
+   *  @apiSuccess {String[]} extra.aired         Start and end date of the anime
+   *  @apiSuccess {Number} extra.duration        Average duration by episodes
+   *  @apiSuccess {Number} extra.rank            Actual ranking position
+   *  @apiSuccess {Number} extra.popularity      Popularity value
+   *  @apiSuccess {Number} extra.members         Number of Members who support the anime
+   *  @apiSuccess {String} extra.premiered       Release date
+   *  @apiSuccess {String} extra.broadcast       Broadcast day
+   *  @apiSuccess {String[]} extra.producers     Anime Propuctures
+   *  @apiSuccess {String[]} extra.licensors     Anime licensors
+   *  @apiSuccess {String[]} extra.studios       Anime studios
+   *  @apiSuccess {String[]} extra.openingThemes title of the beginning anime song 
+   *  @apiSuccess {String[]} extra.endingThemes  song title at the end of the anime
+   *  @apiSuccess {String[]} extra.promoList     List of promotional videos
+   *  @apiSuccess {String[]} extra.charactersList characters List
    * 
    *  @apiSuccessExample {json} Success-Response:
    *  HTTP/1.1 200 OK
@@ -220,6 +243,29 @@ export class AppController {
    *  @apiSuccess {String} episodes.title          Anime episode title
    *  @apiSuccess {String} episodes.description    Anime episode description
    *  @apiSuccess {String} episodes.previewImage   Anime episode preview image
+   *  @apiSuccess {String[]} promo                List of promo
+   *  @apiSuccess {String} promo.title            Promo title
+   *  @apiSuccess {String} promo.previewImage     Preview image  
+   *  @apiSuccess {String} promo.videoURL         Promotional video from youtube.
+   *  @apiSuccess {Object[]} extra               Extra Information
+   *  @apiSuccess {String} extra.titleJapanese   Alternative title in Japanese
+   *  @apiSuccess {String} extra.source          anime source
+   *  @apiSuccess {Number} extra.totalEpisodes   Total anime episodes
+   *  @apiSuccess {String} extra.status          Current Transmission Status
+   *  @apiSuccess {String[]} extra.aired         Start and end date of the anime
+   *  @apiSuccess {Number} extra.duration        Average duration by episodes
+   *  @apiSuccess {Number} extra.rank            Actual ranking position
+   *  @apiSuccess {Number} extra.popularity      Popularity value
+   *  @apiSuccess {Number} extra.members         Number of Members who support the anime
+   *  @apiSuccess {String} extra.premiered       Release date
+   *  @apiSuccess {String} extra.broadcast       Broadcast day
+   *  @apiSuccess {String[]} extra.producers     Anime Propuctures
+   *  @apiSuccess {String[]} extra.licensors     Anime licensors
+   *  @apiSuccess {String[]} extra.studios       Anime studios
+   *  @apiSuccess {String[]} extra.openingThemes title of the beginning anime song 
+   *  @apiSuccess {String[]} extra.endingThemes  song title at the end of the anime
+   *  @apiSuccess {String[]} extra.promoList     List of promotional videos
+   *  @apiSuccess {String[]} extra.charactersList characters List
    * 
    *  @apiSuccessExample {json} Success-Response:
    *  HTTP/1.1 200 OK
@@ -273,6 +319,29 @@ export class AppController {
    *  @apiSuccess {String} episodes.title          Anime episode title
    *  @apiSuccess {String} episodes.description    Anime episode description
    *  @apiSuccess {String} episodes.previewImage   Anime episode preview image
+   *  @apiSuccess {String[]} promo                List of promo
+   *  @apiSuccess {String} promo.title            Promo title
+   *  @apiSuccess {String} promo.previewImage     Preview image  
+   *  @apiSuccess {String} promo.videoURL         Promotional video from youtube.
+   *  @apiSuccess {Object[]} extra               Extra Information
+   *  @apiSuccess {String} extra.titleJapanese   Alternative title in Japanese
+   *  @apiSuccess {String} extra.source          anime source
+   *  @apiSuccess {Number} extra.totalEpisodes   Total anime episodes
+   *  @apiSuccess {String} extra.status          Current Transmission Status
+   *  @apiSuccess {String[]} extra.aired         Start and end date of the anime
+   *  @apiSuccess {Number} extra.duration        Average duration by episodes
+   *  @apiSuccess {Number} extra.rank            Actual ranking position
+   *  @apiSuccess {Number} extra.popularity      Popularity value
+   *  @apiSuccess {Number} extra.members         Number of Members who support the anime
+   *  @apiSuccess {String} extra.premiered       Release date
+   *  @apiSuccess {String} extra.broadcast       Broadcast day
+   *  @apiSuccess {String[]} extra.producers     Anime Propuctures
+   *  @apiSuccess {String[]} extra.licensors     Anime licensors
+   *  @apiSuccess {String[]} extra.studios       Anime studios
+   *  @apiSuccess {String[]} extra.openingThemes title of the beginning anime song 
+   *  @apiSuccess {String[]} extra.endingThemes  song title at the end of the anime
+   *  @apiSuccess {String[]} extra.promoList     List of promotional videos
+   *  @apiSuccess {String[]} extra.charactersList characters List
    * 
    *  @apiSuccessExample {json} Success-Response:
    *  HTTP/1.1 200 OK
@@ -331,6 +400,29 @@ export class AppController {
    *  @apiSuccess {String} episodes.title          Anime episode title
    *  @apiSuccess {String} episodes.description    Anime episode description
    *  @apiSuccess {String} episodes.previewImage   Anime episode preview image
+   *  @apiSuccess {String[]} promo                List of promo
+   *  @apiSuccess {String} promo.title            Promo title
+   *  @apiSuccess {String} promo.previewImage     Preview image  
+   *  @apiSuccess {String} promo.videoURL         Promotional video from youtube.
+   *  @apiSuccess {Object[]} extra               Extra Information
+   *  @apiSuccess {String} extra.titleJapanese   Alternative title in Japanese
+   *  @apiSuccess {String} extra.source          anime source
+   *  @apiSuccess {Number} extra.totalEpisodes   Total anime episodes
+   *  @apiSuccess {String} extra.status          Current Transmission Status
+   *  @apiSuccess {String[]} extra.aired         Start and end date of the anime
+   *  @apiSuccess {Number} extra.duration        Average duration by episodes
+   *  @apiSuccess {Number} extra.rank            Actual ranking position
+   *  @apiSuccess {Number} extra.popularity      Popularity value
+   *  @apiSuccess {Number} extra.members         Number of Members who support the anime
+   *  @apiSuccess {String} extra.premiered       Release date
+   *  @apiSuccess {String} extra.broadcast       Broadcast day
+   *  @apiSuccess {String[]} extra.producers     Anime Propuctures
+   *  @apiSuccess {String[]} extra.licensors     Anime licensors
+   *  @apiSuccess {String[]} extra.studios       Anime studios
+   *  @apiSuccess {String[]} extra.openingThemes title of the beginning anime song 
+   *  @apiSuccess {String[]} extra.endingThemes  song title at the end of the anime
+   *  @apiSuccess {String[]} extra.promoList     List of promotional videos
+   *  @apiSuccess {String[]} extra.charactersList characters List
    * 
    *  @apiSuccessExample {json} Success-Response:
    *  HTTP/1.1 200 OK
@@ -384,6 +476,29 @@ export class AppController {
    *  @apiSuccess {String} episodes.title          Anime episode title
    *  @apiSuccess {String} episodes.description    Anime episode description
    *  @apiSuccess {String} episodes.previewImage   Anime episode preview image
+   *  @apiSuccess {String[]} promo                List of promo
+   *  @apiSuccess {String} promo.title            Promo title
+   *  @apiSuccess {String} promo.previewImage     Preview image  
+   *  @apiSuccess {String} promo.videoURL         Promotional video from youtube.
+   *  @apiSuccess {Object[]} extra               Extra Information
+   *  @apiSuccess {String} extra.titleJapanese   Alternative title in Japanese
+   *  @apiSuccess {String} extra.source          anime source
+   *  @apiSuccess {Number} extra.totalEpisodes   Total anime episodes
+   *  @apiSuccess {String} extra.status          Current Transmission Status
+   *  @apiSuccess {String[]} extra.aired         Start and end date of the anime
+   *  @apiSuccess {Number} extra.duration        Average duration by episodes
+   *  @apiSuccess {Number} extra.rank            Actual ranking position
+   *  @apiSuccess {Number} extra.popularity      Popularity value
+   *  @apiSuccess {Number} extra.members         Number of Members who support the anime
+   *  @apiSuccess {String} extra.premiered       Release date
+   *  @apiSuccess {String} extra.broadcast       Broadcast day
+   *  @apiSuccess {String[]} extra.producers     Anime Propuctures
+   *  @apiSuccess {String[]} extra.licensors     Anime licensors
+   *  @apiSuccess {String[]} extra.studios       Anime studios
+   *  @apiSuccess {String[]} extra.openingThemes title of the beginning anime song 
+   *  @apiSuccess {String[]} extra.endingThemes  song title at the end of the anime
+   *  @apiSuccess {String[]} extra.promoList     List of promotional videos
+   *  @apiSuccess {String[]} extra.charactersList characters List
    * 
    *  @apiParam {String="action","adventure","comedy", "drama", "fantasy", "harem", "historical", "magical_girls","idols", "isekai", "sci-fi", "mecha", "music", "mystery", "post-apocalyptic", "romance","seinen", "shojo", "shonen", "slice_of_life", "sports", "supernatural", "thriller"} genre  Anime type
    *  @apiParam {Number} page   Actual page
@@ -445,6 +560,29 @@ export class AppController {
    *  @apiSuccess {String} episodes.title          Anime episode title
    *  @apiSuccess {String} episodes.description    Anime episode description
    *  @apiSuccess {String} episodes.previewImage   Anime episode preview image
+   *  @apiSuccess {String[]} promo                List of promo
+   *  @apiSuccess {String} promo.title            Promo title
+   *  @apiSuccess {String} promo.previewImage     Preview image  
+   *  @apiSuccess {String} promo.videoURL         Promotional video from youtube.
+   *  @apiSuccess {Object[]} extra               Extra Information
+   *  @apiSuccess {String} extra.titleJapanese   Alternative title in Japanese
+   *  @apiSuccess {String} extra.source          anime source
+   *  @apiSuccess {Number} extra.totalEpisodes   Total anime episodes
+   *  @apiSuccess {String} extra.status          Current Transmission Status
+   *  @apiSuccess {String[]} extra.aired         Start and end date of the anime
+   *  @apiSuccess {Number} extra.duration        Average duration by episodes
+   *  @apiSuccess {Number} extra.rank            Actual ranking position
+   *  @apiSuccess {Number} extra.popularity      Popularity value
+   *  @apiSuccess {Number} extra.members         Number of Members who support the anime
+   *  @apiSuccess {String} extra.premiered       Release date
+   *  @apiSuccess {String} extra.broadcast       Broadcast day
+   *  @apiSuccess {String[]} extra.producers     Anime Propuctures
+   *  @apiSuccess {String[]} extra.licensors     Anime licensors
+   *  @apiSuccess {String[]} extra.studios       Anime studios
+   *  @apiSuccess {String[]} extra.openingThemes title of the beginning anime song 
+   *  @apiSuccess {String[]} extra.endingThemes  song title at the end of the anime
+   *  @apiSuccess {String[]} extra.promoList     List of promotional videos
+   *  @apiSuccess {String[]} extra.charactersList characters List
    * 
    *  @apiParam {String="winter-2020", "fall-2019", "summer-2019", "spring-2019", "fall-2018", "summer-2018", "spring-2018", "winter-2018"} Seasons
    *  @apiParam {Number} page Actual page
@@ -524,6 +662,29 @@ export class AppController {
    *  @apiSuccess {String} episodes.title          Anime episode title
    *  @apiSuccess {String} episodes.description    Anime episode description
    *  @apiSuccess {String} episodes.previewImage   Anime episode preview image
+   *  @apiSuccess {String[]} promo                List of promo
+   *  @apiSuccess {String} promo.title            Promo title
+   *  @apiSuccess {String} promo.previewImage     Preview image  
+   *  @apiSuccess {String} promo.videoURL         Promotional video from youtube.
+   *  @apiSuccess {Object[]} extra               Extra Information
+   *  @apiSuccess {String} extra.titleJapanese   Alternative title in Japanese
+   *  @apiSuccess {String} extra.source          anime source
+   *  @apiSuccess {Number} extra.totalEpisodes   Total anime episodes
+   *  @apiSuccess {String} extra.status          Current Transmission Status
+   *  @apiSuccess {String[]} extra.aired         Start and end date of the anime
+   *  @apiSuccess {Number} extra.duration        Average duration by episodes
+   *  @apiSuccess {Number} extra.rank            Actual ranking position
+   *  @apiSuccess {Number} extra.popularity      Popularity value
+   *  @apiSuccess {Number} extra.members         Number of Members who support the anime
+   *  @apiSuccess {String} extra.premiered       Release date
+   *  @apiSuccess {String} extra.broadcast       Broadcast day
+   *  @apiSuccess {String[]} extra.producers     Anime Propuctures
+   *  @apiSuccess {String[]} extra.licensors     Anime licensors
+   *  @apiSuccess {String[]} extra.studios       Anime studios
+   *  @apiSuccess {String[]} extra.openingThemes title of the beginning anime song 
+   *  @apiSuccess {String[]} extra.endingThemes  song title at the end of the anime
+   *  @apiSuccess {String[]} extra.promoList     List of promotional videos
+   *  @apiSuccess {String[]} extra.charactersList characters List
    * 
    * 
    *  @apiParam {String} query
