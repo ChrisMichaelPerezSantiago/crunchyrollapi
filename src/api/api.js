@@ -38,7 +38,8 @@ const searchAnime = async (query) => {
     const description = $element.find('span.info span.desc').text();
     const type = $element.find('span.info span.type').text().trim().replace(/[()]/g, '').trim();
     const extra = await episodesListHanlder(id);
-    const info = await animeExtraInfo(title)
+    const info = await animeExtraInfo(title);
+    const promo = await getAnimeVideoPromo(title);
 
     resolve({
       id: id || null,
@@ -46,6 +47,7 @@ const searchAnime = async (query) => {
       image: image || null,
       description: description || null,
       type: type || null,
+      promo: promo || null,
       extra: info || null,
       episodes: extra || null,
     });
@@ -67,13 +69,15 @@ const getAnimeListBySeason = async (season, page) => {
     const image = $element.find('img.portrait').attr('src');
     const total_eps = parseInt($element.find('span.series-data').text(), 10);
     const extra = await episodesListHanlder(id);
-    const info = await animeExtraInfo(title)
+    const info = await animeExtraInfo(title);
+    const promo = await getAnimeVideoPromo(title);
 
     resolve({
       id: id || null,
       title: title || null,
       image: image || null,
       total_eps: total_eps || null,
+      promo: promo || null,
       extra: info || null,
       episodes: extra || null,
     })
@@ -95,13 +99,15 @@ const getAnimeListByGenres = async (genre, page) => {
     const image = $element.find('img.portrait').attr('src');
     const total_eps = parseInt($element.find('span.series-data').text(), 10);
     const extra = await episodesListHanlder(id);
-    const info = await animeExtraInfo(title)
+    const info = await animeExtraInfo(title);
+    const promo = await getAnimeVideoPromo(title);
 
     resolve({
       id: id || null,
       title: title || null,
       image: image || null,
       total_eps: total_eps || null,
+      promo: promo || null,
       extra: info || null,
       episodes: extra || null,
     })
@@ -123,13 +129,15 @@ const getAllLiveActionDrama = async () => {
     const image = $element.find('img.portrait').attr('src');
     const total_eps = parseInt($element.find('span.series-data').text(), 10);
     const extra = await episodesListHanlder(id);
-    const info = await animeExtraInfo(title)
+    const info = await animeExtraInfo(title);
+    const promo = await getAnimeVideoPromo(title);
 
     resolve({
       id: id || null,
       title: title || null,
       image: image || null,
       total_eps: total_eps || null,
+      promo: promo || null,
       extra: info || null,
       episodes: extra || null,
     });
@@ -152,13 +160,16 @@ const getAnimeListByAlphabet = async (letter) => {
     const image = $element.find('img.portrait').attr('src');
     const total_eps = parseInt($element.find('span.series-data').text(), 10);
     const extra = await episodesListHanlder(id);
-    const info = await animeExtraInfo(title)
+    const info = await animeExtraInfo(title);
+    const promo = await getAnimeVideoPromo(title);
+
 
     resolve({
       id: id || null,
       title: title || null,
       image: image || null,
       total_eps: total_eps || null,
+      promo: promo || null,
       extra: info || null,
       episodes: extra || null,
     })
@@ -181,13 +192,16 @@ const getAllAnimeSeriesUpdated = async (page) => {
     const epsInfo = $element.find('span.series-data').text().trim();
     const episode = Number(epsInfo.split('–')[0].match(/\d+/)[0]);
     const extra = await episodesListHanlder(id);
-    const info = await animeExtraInfo(title)
+    const info = await animeExtraInfo(title);
+    const promo = await getAnimeVideoPromo(title);
+
 
     resolve({
       id: id || null,
       title: title || null,
       image: image || null,
       episode: episode || null,
+      promo: promo || null,
       extra: info || null,
       episodes: extra[0]
     })
@@ -211,12 +225,15 @@ const getAllSimulcasts = async (page) => {
     const total_eps = parseInt($element.find('span.series-data').text(), 10);
     const extra = await episodesListHanlder(id);
     const info = await animeExtraInfo(title);
+    const promo = await getAnimeVideoPromo(title);
+
 
     resolve({
       id: id || null,
       title: title || null,
       image: image || null,
       total_eps: total_eps || null,
+      promo: promo || null,
       extra: info || null,
       episodes: extra || null,
     })
@@ -239,11 +256,13 @@ const getAllAnimeSeries = async (page) => {
     const total_eps = parseInt($element.find('span.series-data').text(), 10);
     const extra = await episodesListHanlder(id);
     const info = await animeExtraInfo(title);
+    const promo = await getAnimeVideoPromo(title);
     resolve({
       id: id || null,
       title: title || null,
       image: image || null,
       total_eps: total_eps || null,
+      promo: promo || null,
       extra: info || null,
       episodes: extra || null,
     })
@@ -298,6 +317,34 @@ const animeExtraInfo = async (title) => {
     });
     return Promise.all(promises);
   } catch (err) {
+    console.log(err)
+  }
+};
+
+
+const getAnimeVideoPromo = async(title) =>{
+  try{
+    const res = await cloudscraper.get(`${BASE_JIKA_URL}${title}`);
+    const matchAnime = JSON.parse(res).results.filter(x => new RegExp(x.title , "gi"));
+    const malId = matchAnime[0].mal_id;
+
+    if(typeof matchAnime[0].mal_id === 'undefined') return null;
+
+    const jikanCharactersURL = `https://api.jikan.moe/v3/anime/${malId}/videos`;
+    const data = await cloudscraper.get(jikanCharactersURL);
+    const body = JSON.parse(data).promo;
+    const promises = [];
+  
+    body.map(doc =>{
+      promises.push({
+        title: doc.title,
+        previewImage: doc.image_url,
+        videoURL: doc.video_url
+      });
+    });
+
+    return Promise.all(promises);
+  }catch(err){
     console.log(err)
   }
 };
