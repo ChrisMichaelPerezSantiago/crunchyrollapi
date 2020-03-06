@@ -76,6 +76,29 @@ export class AppController {
    *  @apiSuccess {String} title                   Anime title
    *  @apiSuccess {String} image                   Anime image
    *  @apiSuccess {Number} total_eps               Anime totoal episodes
+   *  @apiSuccess {String[]} promo                List of promo
+   *  @apiSuccess {String} promo.title            Promo title
+   *  @apiSuccess {String} promo.previewImage     Preview image  
+   *  @apiSuccess {String} promo.videoURL         Promotional video from youtube.
+   *  @apiSuccess {Object[]} extra               Extra Information
+   *  @apiSuccess {String} extra.titleJapanese   Alternative title in Japanese
+   *  @apiSuccess {String} extra.source          anime source
+   *  @apiSuccess {Number} extra.totalEpisodes   Total anime episodes
+   *  @apiSuccess {String} extra.status          Current Transmission Status
+   *  @apiSuccess {String[]} extra.aired         Start and end date of the anime
+   *  @apiSuccess {Number} extra.duration        Average duration by episodes
+   *  @apiSuccess {Number} extra.rank            Actual ranking position
+   *  @apiSuccess {Number} extra.popularity      Popularity value
+   *  @apiSuccess {Number} extra.members         Number of Members who support the anime
+   *  @apiSuccess {String} extra.premiered       Release date
+   *  @apiSuccess {String} extra.broadcast       Broadcast day
+   *  @apiSuccess {String[]} extra.producers     Anime Propuctures
+   *  @apiSuccess {String[]} extra.licensors     Anime licensors
+   *  @apiSuccess {String[]} extra.studios       Anime studios
+   *  @apiSuccess {String[]} extra.openingThemes title of the beginning anime song 
+   *  @apiSuccess {String[]} extra.endingThemes  song title at the end of the anime
+   *  @apiSuccess {String[]} extra.promoList     List of promotional videos
+   *  @apiSuccess {String[]} extra.charactersList characters List
    *  @apiSuccess {Object[]} episodes              List of episodes
    *  @apiSuccess {String} episodes.epsId          Anime episode id
    *  @apiSuccess {String} episodes.title          Anime episode title
